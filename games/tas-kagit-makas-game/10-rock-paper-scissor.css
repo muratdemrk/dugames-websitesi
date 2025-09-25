@@ -1,0 +1,691 @@
+
+.bg-custom {
+  background-color: rgba(31,32,48,1) !important;
+}
+.bg-custom-alt {
+  background: linear-gradient(135deg,     #ffd700 0%,    #e7c60b 10%,    #b89f14 17%,    #d4c414 25%,    #dab673 35%,    #9c6f0e 50%,    #978d57 75%,    #d8ac1b 100%);
+  background-size: 400% 400%;
+  animation: desertGradient 20s ease infinite;
+}
+.bg-custom-ocean {
+  background: linear-gradient(135deg,  
+    #87CEEB 0%,    /* Light Sky Blue */
+    #70B7E6 10%,   /* Soft Blue */
+    #5FA8D3 17%,   /* Ocean Blue */
+    #4682B4 25%,   /* Steel Blue */
+    #3B7BA3 35%,   /* Deep Sea Blue */
+    #2B6C92 50%,   /* Marine Blue */
+    #1F5A7A 75%,   /* Darker Ocean */
+    #0F4C75 100%   /* Deep Blue */
+);
+  /* background: linear-gradient(135deg,     rgba(0, 102, 204, 0.1) 0%,rgba(0, 191, 255, 0.4) 25%,rgba(0, 255, 255, 0.2) 50%,rgba(0, 128, 128, 0.2) 75%,skyblue 100%); */
+  background-size: 400% 400%;
+  animation: oceanGradient 20s ease infinite;
+}
+.bg-custom-forest {
+  background: linear-gradient(135deg,
+    #228B22 0%,    /* Forest Green */
+    #32CD32 10%,   /* Lime Green */
+    #008000 17%,   /* Green */
+    #2E8B57 25%,   /* Sea Green */
+    #3CB371 35%,   /* Medium Sea Green */
+    #6B8E23 50%,   /* Olive Drab */
+    #556B2F 75%,   /* Dark Olive Green */
+    #006400 100%   /* Dark Green */
+);
+background-size: 400% 400%;
+animation: forestGradient 20s ease infinite;
+
+}
+
+form{
+  margin-right: auto;
+
+}
+
+
+#Input{
+  padding-left: 10px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 8px 15px;
+  width: 400px;
+  outline: none;
+}
+
+#Input::placeholder {
+  color: #aaa;
+}
+
+#Input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+
+/* //////////// */
+main{
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  /* text-align: center; */
+  padding: 20px;
+  width: 60%;
+  height: 80%;
+  background-color: rgb(25,25,25);
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+    
+.title{
+  font-size: 30px;
+  display: flex;
+  font-weight: bold;
+}
+.dropDown{
+  position: absolute;
+  margin-left: 91%;
+  top: 5%;
+  display: inline-flex;
+  flex-direction: column;
+}
+.dropDown>button>i{
+  cursor: pointer;
+
+}
+
+.bidown{
+  display: none;
+}
+
+.imgDown{
+  top: 0%;
+  right: 10%;/*bununla resimdeki iconlari sola yasladik*/
+  margin-right: 100%;
+  position: absolute;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  
+}
+
+
+.playground{
+  display:block;
+  left: auto;
+  right: auto;
+  text-align: center;
+}
+
+.resBoard{
+  display: block;
+}
+.move-icon{
+  height: 50px;
+  
+}
+.move-btn{
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 60px;
+  margin-right: 25px;
+  padding: 25px 25px;
+  width: 120px;
+  height: 120px;
+  cursor:pointer;
+  
+}
+.result{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top:40px;
+  margin-right: 20px;
+}
+.score{
+  margin-top: 50px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.reset-score-btn,
+.auto-play-btn{
+  background-color: white;
+  border: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+    
+
+/* FUll screen active */
+/* .fullscreen-active{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  font-size: 1.5rem;
+} */
+
+/* .fullscreen-active .playground{
+  transform: scale(1.4);
+  margin-top: auto;
+  
+} */
+
+.fullscreen-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+
+.fullscreen-active.bg-custom-alt {
+  background: linear-gradient(135deg,     #ffd700 0%,    #e7c60b 10%,    #b89f14 17%,    #d4c414 25%,    #dab673 35%,    #9c6f0e 50%,    #978d57 75%,    #d8ac1b 100%);
+  background-size: 400% 400%;
+  animation: desertGradient 20s ease infinite;
+  -webkit-animation: desertGradient 20s ease infinite;
+}
+
+.fullscreen-active .playground {
+  transform: scale(1.2);
+  margin-bottom: 5vh;
+  
+}
+
+.fullscreen-active .move-btn.mode1-btn {
+  border: 3px solid white;
+  border-radius: 60px;
+  width: 120px;
+  height: 120px;
+}
+
+.fullscreen-active .move-btn.mode2-btn {
+  border: none;
+  width: 120px;
+  height: 120px;
+}
+
+.fullscreen-active .move-btn.mode3-btn {
+  border: none;
+  width: 120px;
+  height: 120px;
+}
+
+.fullscreen-active .move-btn.mode4-btn {
+  border: none;
+  width: 120px;
+  height: 120px;
+}
+
+
+.fullscreen-active .score {
+  position: fixed;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.fullscreen-active .title{
+  /* margin-bottom:9%; */
+  color: yellow;
+}
+
+.fullscreen-active button{
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+.fullscreen-active .dropDown button{
+  font-size: .7rem;
+}
+.fullscreen-active .volume-control {
+  position: absolute;
+  display: none;
+  width: 75px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  left: 30%;
+  top: 95%;
+  margin-top: 103px;
+  z-index: 3;
+}
+
+#imbra{
+  width: 80px;
+  height: 80px;
+  top: 2%;
+  left: 2%;
+  /* position: absolute; */
+}
+
+.fullscreen-active 
+  #tempro{
+  display: none;
+}
+
+/* Update these styles */
+.volume-control {
+  position: absolute;
+  display: none;
+  width: 75px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  left: 0%;
+  top: 100%;
+  margin-top: 103px;
+  z-index: 3;
+}
+
+.volume-bar {
+  width: 100px;
+  height: 5px;
+  -webkit-appearance: none;
+  background: #4065a8;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.volume-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-bar::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+#btn4:hover .volume-control {
+  display: block;
+}
+
+/* Add this new style for the button container */
+#btn4 {
+  position: relative;
+}
+
+#point{
+  padding: 2px;
+  color: yellow;
+}
+
+
+
+
+
+
+/* Add responsive design rules */
+
+@media screen and (max-width: 480px) {
+  main {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .title {
+    left: 10%;
+    position: absolute;
+    top: 40px;
+    display: none;
+  }
+  .move-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 6px;
+  }
+  .move-btn img{
+    width: 50px;
+    height: 50px;
+  }
+
+  
+  .move-btn.mode1-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 6px;
+  }
+  .move-btn.mode1-btn img{
+    width: 50px;
+    height: 50px;
+  }
+
+  
+  
+  .move-btn.mode2-btn {
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 10px;
+  }
+  
+  .move-btn.mode2-btn img{
+    width: 60px;
+    height: 60px;
+  }
+
+  .move-btn.mode3-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 10px;
+  }
+  .move-btn.mode3-btn img{
+    width: 60px;
+    height: 60px;
+  }
+
+  .move-btn.mode4-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 10px;
+  }
+  .move-btn.mode4-btn img{
+    width: 60px;
+    height: 60px;
+  }
+
+  .move-icon {
+    height: 25px;
+  }
+  
+  .result {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  
+  .score {
+    margin-top: 30px;
+  }
+  
+  .dropDown {
+    margin-left: 85%;
+  }
+
+  /* Add styles for control buttons in mobile view */
+  .reset-score-btn,
+  .auto-play-btn {
+    display: inline-block;
+    margin: 5px;
+    font-size: 12px;
+    padding: 6px 10px;
+    min-width: 80px;
+  }
+
+  /* Container for control buttons */
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .fullscreen-active .playground {
+    transform: scale(1.1);
+    margin-top: 12vh;
+
+  }
+
+  .fullscreen-active .dropDown button{
+    padding: 6px 12px;
+  }
+
+  .fullscreen-active .move-btn.mode1-btn,
+  .fullscreen-active .move-btn.mode2-btn,
+  .fullscreen-active .move-btn.mode3-btn,
+  .fullscreen-active .move-btn.mode4-btn {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+  .fullscreen-active .move-icon {
+    height: 45px;
+  }
+  .fullscreen-active .score {
+    bottom: 10vh;
+  }
+  .fullscreen-active .reset-score-btn,
+  .fullscreen-active .auto-play-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: 90px;
+  }
+  .fullscreen-active .volume-control {
+    top: auto;
+    bottom: -95px;
+    left: 10px;
+    z-index: 1000;
+  }
+}
+
+@media screen and (max-width:768px){
+  .title{
+    display: none;
+  }
+  main{
+    width: 100%;
+    height: 100%;
+  }
+
+  .move-btn.mode1-btn img{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
+
+  /* Adjust control buttons in fullscreen mobile view */
+  .fullscreen-active .score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .fullscreen-active .reset-score-btn,
+  .fullscreen-active .auto-play-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: 90px;
+  }
+  
+  
+
+
+  
+@keyframes desertGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@keyframes oceanGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes forestGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes keyPressHalo {
+  0% {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4),
+                0 0 0 10px rgba(255, 255, 255, 0.2),
+                0 0 0 20px rgba(255, 0, 0, 0.1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px 10px rgba(255, 215, 0, 0.6),
+                0 0 50px 20px rgba(255, 255, 255, 0.4),
+                0 0 70px 30px rgba(255, 0, 0, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0),
+                0 0 0 0 rgba(255, 255, 255, 0),
+                0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+@keyframes keyPressWavo {
+  0% {
+    background-color: rgba(0, 102, 204, 0.1); /* Deep ocean blue */
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.4), /* Sky blue */
+                0 0 0 10px rgba(0, 255, 255, 0.2), /* Cyan */
+                0 0 0 20px rgba(0, 128, 128, 0.1); /* Teal */
+  }
+  50% {
+    background-color: rgba(0, 102, 204, 0.3);
+    box-shadow: 0 0 30px 10px rgba(0, 191, 255, 0.6),
+                0 0 50px 20px rgba(0, 255, 255, 0.4),
+                0 0 70px 30px rgba(0, 128, 128, 0.2);
+  }
+  100% {
+    background-color: rgba(0, 102, 204, 0);
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0),
+                0 0 0 0 rgba(0, 255, 255, 0),
+                0 0 0 0 rgba(0, 128, 128, 0);
+  }
+}
+
+@keyframes keyPressForo {
+  0% {
+    background-color: rgba(25, 50, 30, 0.1); /* Dark jungle green */
+    box-shadow: 0 0 0 0 rgba(10, 80, 40, 0.4), /* Darker jungle green */
+                0 0 0 10px rgba(30, 70, 40, 0.2), /* Medium jungle green */
+                0 0 0 20px rgba(10, 40, 20, 0.1); /* Darkest jungle green */
+  }
+  50% {
+    background-color: rgba(25, 50, 30, 0.3);
+    box-shadow: 0 0 30px 10px rgba(10, 80, 40, 0.6),
+                0 0 50px 20px rgba(30, 70, 40, 0.4),
+                0 0 70px 30px rgba(10, 40, 20, 0.2);
+  }
+  100% {
+    background-color: rgba(25, 50, 30, 0);
+    box-shadow: 0 0 0 0 rgba(10, 80, 40, 0),
+                0 0 0 0 rgba(30, 70, 40, 0),
+                0 0 0 0 rgba(10, 40, 20, 0);
+  }
+}
+
+.move-btn.mode2-btn.key-press-active {
+  animation: keyPressHalo 0.8s ease-out;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+/* MODE3 */
+.move-btn.mode3-btn.key-press-active {
+  animation: keyPressWavo 0.6s ease-out;
+  border-radius: 20%;
+  transition: all 0.1s ease-in-out;
+}
+
+.move-btn.mode4-btn.key-press-active {
+  animation: keyPressForo 0.6s ease-out;
+  border-radius: 20%;
+  transition: all 0.1s ease-in-out;
+}
+
+.mode2-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  
+}
+.mode3-image{
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+}
+.mode4-image{
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* AAAA */
+.move-btn.mode4-btn{
+  border:none;
+  background-color: transparent;
+}
+
+.move-btn.mode3-btn{
+  border:none;
+  background-color: transparent;
+}
+
+.move-btn.mode2-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.move-btn.mode1-btn {
+  border: 3px solid white;
+  border-radius: 60px;
+}
